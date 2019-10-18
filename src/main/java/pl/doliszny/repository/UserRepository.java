@@ -8,4 +8,6 @@ import pl.doliszny.model.User;
 @Repository
 public interface UserRepository extends CrudRepository<User, Long> {
 
+    User findOldestUser(String birth_date);
+
 }

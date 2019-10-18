@@ -26,4 +26,10 @@ public class MyController {
 
         return userService.findById(userId);
     }
+
+    @RequestMapping("/users/{userId}")
+    public User findOldestUser(@PathVariable String birth_date) {
+
+        return userService.findOldestUser(birth_date);
+    }
 }

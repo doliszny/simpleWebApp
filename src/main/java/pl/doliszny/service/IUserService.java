@@ -8,4 +8,6 @@ public interface IUserService {
 
     public List<User> findAll();
     public User findById(Long id);
+    public User findOldestUser(String birth_date);
+
 }

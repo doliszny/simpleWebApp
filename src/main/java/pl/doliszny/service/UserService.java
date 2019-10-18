@@ -27,4 +27,11 @@ public class UserService implements IUserService {
         User user = repository.findOne(id);
         return user;
     }
+
+    @Override
+    public User findOldestUser(String birth_date) {
+
+        User user = repository.findOldestUser(birth_date);
+        return user;
+    }
 }
