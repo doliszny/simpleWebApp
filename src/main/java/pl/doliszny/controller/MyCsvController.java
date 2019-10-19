@@ -19,17 +19,17 @@ public class MyCsvController {
     IUserService userService;
 
     @RequestMapping(value = "/users", produces = "text/csv")
-    public void findCities(HttpServletResponse response) throws IOException {
+    public void findUsers(HttpServletResponse response) throws IOException {
 
         List<User> users = (List<User>) userService.findAll();
 
         WriteCsvToResponse.writeUsers(response.getWriter(), users);
     }
 
-    @RequestMapping(value = "/users/{userId}", produces = "text/csv")
-    public void findCity(@PathVariable Long cityId, HttpServletResponse response) throws IOException {
+    @RequestMapping(value = "/users/{id}", produces = "text/csv")
+    public void findUser(@PathVariable Long id, HttpServletResponse response) throws IOException {
 
-        User user = userService.findById(cityId);
+        User user = userService.findById(id);
         WriteCsvToResponse.writeUser(response.getWriter(), user);
     }
 }

@@ -6,8 +6,10 @@ import java.util.List;
 
 public interface IUserService {
 
-    public List<User> findAll();
-    public User findById(Long id);
-    public User findOldestUser(String birth_date);
+    Long countById(Long Id);
+
+    List<User> findAllOrderByBirthDate(String birth_date);
+
+    User findBirthDateByLowestWherePhoneNoIsNotNull(String birth_date);
 
 }

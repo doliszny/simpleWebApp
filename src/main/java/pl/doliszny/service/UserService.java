@@ -13,25 +13,26 @@ public class UserService implements IUserService {
     @Autowired
     private UserRepository repository;
 
-    @Override
-    public List<User> findAll() {
 
-        List<User> users = (List<User>) repository.findAll();
+    @Override
+    public Long countById(Long id) {
+
+        Long users = repository.countById(id);
 
         return users;
     }
 
     @Override
-    public User findById(Long id) {
+    public List<User> findAllOrderByBirthDate(String birth_date) {
 
-        User user = repository.findOne(id);
-        return user;
+        List<User> users = (List<User>) repository.findAllOrderByBirthDate(birth_date);
+        return users;
     }
 
     @Override
-    public User findOldestUser(String birth_date) {
+    public User findBirthDateByLowestWherePhoneNoIsNotNull(String birth_date) {
 
-        User user = repository.findOldestUser(birth_date);
+        User user = repository.findBirthDateByLowestWherePhoneNoIsNotNull(birth_date);
         return user;
     }
 }

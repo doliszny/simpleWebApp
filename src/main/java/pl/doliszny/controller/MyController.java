@@ -16,7 +16,7 @@ public class MyController {
     private IUserService userService;
 
     @RequestMapping("/users")
-    public List<User> findCities() {
+    public List<User> findUsers() {
 
         return userService.findAll();
     }
