@@ -6,7 +6,7 @@ import java.util.List;
 
 public interface IUserService {
 
-    Long countById(Long Id);
+    Long countById(Long id);
 
     List<User> findAllOrderByBirthDate(String birth_date);
 
